@@ -1,6 +1,7 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+//slider show top header
 const cardWrapper = $('.card-wrapper')
 const cardWrapperChildren = Array.from(cardWrapper.children)
 const widthToScroll = cardWrapper.children[0].offsetWidth
@@ -75,6 +76,7 @@ cardWrapper.onscroll = function () {
         cardWrapper.scrollLeft += widthToScroll
     }, 6000)
 }
+//end slider show top header
 
 //toggle
 const toggleMenu = $(".bx-menu");
