@@ -90,3 +90,22 @@ toggleMenu.addEventListener("click", () => {
 toggleClose.addEventListener("click", () => {
     menuHeaderMobile.classList.toggle("show");
 });
+
+// cart funtion
+const cart = $(".cart");
+const cartMain = $(".bx-cart");
+const cartForm = $(".cart-form");
+const closeForm = $(".close");
+
+cartMain.addEventListener("click", () => {
+    cart.classList.toggle("cart-menu");
+});
+
+closeForm.addEventListener("click", () => {
+    cart.classList.toggle("cart-menu");
+});
+
+// remove item
+const removeItem = $$(".remove-item");
+const itemTest = $$(".item");
+
