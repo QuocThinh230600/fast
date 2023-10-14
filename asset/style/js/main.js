@@ -105,7 +105,18 @@ closeForm.addEventListener("click", () => {
     cart.classList.toggle("cart-menu");
 });
 
-// remove item
-const removeItem = $$(".remove-item");
-const itemTest = $$(".item");
+// banner slider page
+window.onscroll = function () {
+    myFunction()
+};
 
+var header = document.querySelector(".main-header");
+var sticky = header.offsetTop;
+
+function myFunction() {
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+}

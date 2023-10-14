@@ -30,8 +30,6 @@ const app = {
                 <div class="center">
                     <p class="name">${product.name}</p>
                     <p class="price">${product.price}đ</p>
-                    <input type="number" name="quantity" class="quantity" id="quantity" min="1"
-                        max="999">
                 </div>
                 <div class="right">
                     <i class='bx bx-x remove-item'></i>
