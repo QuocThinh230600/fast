@@ -555,6 +555,11 @@ body::-webkit-scrollbar-thumb {
     .main-header .cart .cart-form .cart-item .item .center>input {
         margin: auto;
     }
+
+    .main-header .cart {
+        padding-right: 0;
+    }
+
 }
 
 /* reposive mobile */
@@ -599,7 +604,9 @@ body::-webkit-scrollbar-thumb {
         /* clip: rect(0, 0, 0, 0);    */
     }
 
-
+    .main-header .cart {
+        padding-right: 0;
+    }
 
 
     .header .container .main-header .button-menu-mobile>i {
@@ -820,45 +827,105 @@ body::-webkit-scrollbar-thumb {
     font-family: 'Dancing Script', cursive;
 }
 
+.collection {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 3rem;
+    margin: 2rem 0;
+    overflow: hidden;
+}
 
-
-.page .container .blogs .item {
+.collection .item {
     position: relative;
+}
+
+.collection .item a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: var(--font-color-black);
+    font-weight: 700;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto';
+}
+
+.collection .item a>img {
+    object-fit: cover;
+    height: 500px;
     width: 100%;
 }
 
-.page .container .blogs .list-item {
+.collection .item a>p {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 20px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.list-item {
+    position: relative;
+    max-width: 1920px;
+    width: 100%;
+}
+
+.wrapper-item {
     display: grid;
-    grid-auto-columns: calc(100% /2);
     grid-auto-flow: column;
+    grid-auto-columns: calc(100% / 3);
     overflow-x: auto;
     cursor: grab;
+    gap: 1rem;
     scroll-snap-type: x mandatory;
     /* scroll-padding-inline: 24px; */
     scroll-behavior: smooth;
     scrollbar-width: none;
-    gap: 2rem;
 }
 
-.page .container .blogs .list-item::-webkit-scrollbar {
+.wrapper-item::-webkit-scrollbar {
     display: none;
 }
 
-.page .container .blogs .item a>img {
-    width: 100%;
-    height: 300px;
+.wrapper-item.grab {
+    cursor: grabbing;
+    user-select: none;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
 }
 
-.page .container .blogs .item a>h1 {
+.wrapper-item.no-smooth {
+    scroll-behavior: auto;
+}
+
+.blogs .list-item .wrapper-item .card-item .card-info {
+    position: relative;
+
+}
+
+.blogs .list-item .wrapper-item .card-item .card-info>p {
     position: absolute;
     top: 0;
-    height: 100%;
     width: 100%;
-    text-transform: uppercase;
-    padding: 2rem;
+    height: 100%;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.5);
     color: var(--font-color-white);
-    font-size: 20px;
-    background: rgba(0, 0, 0, 0.342);
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: auto;
+    text-align: left;
+}
+
+.card-item {
+    scroll-snap-align: start;
+    overflow: hidden;
+}
+
+.card-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 1200px) {
@@ -892,6 +959,29 @@ body::-webkit-scrollbar-thumb {
     .page .container .banner>a>img {
         height: 600px;
     }
+
+    .wrapper-item {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc(100% / 2);
+        overflow-x: auto;
+        cursor: grab;
+        gap: 1rem;
+        scroll-snap-type: x mandatory;
+        /* scroll-padding-inline: 24px; */
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    .page .container .product-list,
+    .page .container .blogs {
+        padding: 1rem 1rem;
+    }
+
+    .collection {
+        grid-template-columns: auto auto;
+    }
+    
 }
 
 @media screen and (max-width: 575px) {
@@ -922,6 +1012,35 @@ body::-webkit-scrollbar-thumb {
 
     .page .container .banner>a>img {
         height: 400px;
+    }
+
+    .wrapper-item {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc(100% / 1);
+        overflow-x: auto;
+        cursor: grab;
+        gap: 1rem;
+        scroll-snap-type: x mandatory;
+        /* scroll-padding-inline: 24px; */
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    .page .container .product-list,
+    .page .container .blogs {
+        padding: 1rem 1rem;
+    }
+
+    .collection {
+        grid-template-columns: auto;
+        gap: 0;
+    }
+
+    .collection .item a>img {
+        object-fit: cover;
+        height: 300px;
+        width: 100%;
     }
 }
 
