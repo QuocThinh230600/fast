@@ -1,14 +1,13 @@
-//slider show blogs
-const blogs = $('.wrapper-item');
+const blogs = document.querySelector('.wrapper-item');
 const blogitemChild = Array.from(blogs.children);
 const widthToScrollBlogs = blogs.children[0].offsetWidth;
 
 const cardBoundingBlogs = blogs.getBoundingClientRect();
 const columnBlogs = Math.floor(blogs.offsetWidth / (widthToScrollBlogs));
 
-let currScroll = 0;
-let initPos = 0;
-let clicked = false;
+// let currScroll = 0;
+// let initPos = 0;
+// let clicked = false;
 
 blogitemChild.slice(-columnBlogs).reverse().forEach(item => {
     blogs.insertAdjacentHTML('afterbegin', item.outerHTML);
