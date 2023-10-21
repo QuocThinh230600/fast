@@ -10,10 +10,4 @@ const showItemFilter = document.querySelector(".filter-item");
 
 filter.addEventListener("click", () => {
     showItemFilter.classList.toggle("show");
-});
-
-if (arrow === true){
-    filter.addEventListener("click", () => {
-        showItemFilter.classList.toggle("show");
-    });
-}
+}); 
